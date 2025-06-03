@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'lab_03\ui\caesar.ui'
+# Form implementation generated from reading ui file './ui/caesar.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -9,47 +9,59 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import os
+os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = "../platforms"
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        MainWindow.setFont(font)
+        MainWindow.resize(967, 713)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(230, 380, 75, 23))
-        self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(430, 380, 75, 23))
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.btn_decrypt = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_decrypt.setGeometry(QtCore.QRect(530, 540, 161, 61))
+        self.btn_decrypt.setObjectName("btn_decrypt")
+        self.btn_encrypt = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_encrypt.setGeometry(QtCore.QRect(230, 540, 161, 61))
+        self.btn_encrypt.setObjectName("btn_encrypt")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(60, 80, 47, 13))
+        self.label.setGeometry(QtCore.QRect(340, 40, 311, 31))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(60, 220, 47, 13))
+        self.label_2.setGeometry(QtCore.QRect(70, 150, 91, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(60, 300, 71, 16))
+        self.label_3.setGeometry(QtCore.QRect(120, 270, 61, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(330, 20, 121, 16))
+        self.label_4.setGeometry(QtCore.QRect(50, 380, 111, 31))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_4.setFont(font)
         self.label_4.setObjectName("label_4")
-        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit.setGeometry(QtCore.QRect(150, 50, 481, 71))
-        self.plainTextEdit.setObjectName("plainTextEdit")
-        self.plainTextEdit_2 = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_2.setGeometry(QtCore.QRect(150, 200, 481, 71))
-        self.plainTextEdit_2.setObjectName("plainTextEdit_2")
-        self.plainTextEdit_3 = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.plainTextEdit_3.setGeometry(QtCore.QRect(150, 300, 481, 71))
-        self.plainTextEdit_3.setObjectName("plainTextEdit_3")
+        self.txt_plain_text = QtWidgets.QTextEdit(self.centralwidget)
+        self.txt_plain_text.setGeometry(QtCore.QRect(210, 120, 561, 91))
+        self.txt_plain_text.setObjectName("txt_plain_text")
+        self.txt_cipher_text = QtWidgets.QTextEdit(self.centralwidget)
+        self.txt_cipher_text.setGeometry(QtCore.QRect(210, 350, 561, 91))
+        self.txt_cipher_text.setObjectName("txt_cipher_text")
+        self.txt_key = QtWidgets.QTextEdit(self.centralwidget)
+        self.txt_key.setGeometry(QtCore.QRect(210, 230, 561, 91))
+        self.txt_key.setObjectName("txt_key")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 27))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 967, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -62,12 +74,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "Encrypt"))
-        self.pushButton_2.setText(_translate("MainWindow", "Decrypt"))
-        self.label.setText(_translate("MainWindow", "plaintext:"))
-        self.label_2.setText(_translate("MainWindow", "key:"))
-        self.label_3.setText(_translate("MainWindow", "ciphertext:"))
-        self.label_4.setText(_translate("MainWindow", "CAESAR CIPHER"))
+        self.btn_decrypt.setText(_translate("MainWindow", "DeCrypt"))
+        self.btn_encrypt.setText(_translate("MainWindow", "EnCrypt"))
+        self.label.setText(_translate("MainWindow", "CAESAR CIPHER"))
+        self.label_2.setText(_translate("MainWindow", "Plain text:"))
+        self.label_3.setText(_translate("MainWindow", "Key:"))
+        self.label_4.setText(_translate("MainWindow", "Cipher Text:"))
 
 
 if __name__ == "__main__":
