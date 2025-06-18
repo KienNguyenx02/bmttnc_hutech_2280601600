@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
-        "./lab_01/ex04"
+        "./lab_01/ex04",
+        "./lab_05/blockchain"
     ]
 }
